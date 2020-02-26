@@ -106,3 +106,9 @@ tfoptflow/models/pwcnet-lg-6-2-cyclic-chairsthingsmix/checkpoint
 tfoptflow/models/pwcnet-lg-6-2-cyclic-chairsthingsmix/pwcnet.ckpt-49000.data-00000-of-00001
 tfoptflow/models/pwcnet-lg-6-2-cyclic-chairsthingsmix/pwcnet.ckpt-49000.index
 tfoptflow/models/pwcnet-lg-6-2-cyclic-chairsthingsmix/pwcnet.ckpt-49000.meta
+
+# pycharm
+**/.idea/workspace.xml
+**/.idea/tasks.xml
+**/.idea/usage.statistics.xml
+**/.idea/shelf/

@@ -90,7 +90,7 @@ def plot_img_pairs_w_flows(
                 plot += jump
             for lvl in range(num_lvls):
                 plt.subplot(row_count, col_count, plot)
-                plt.title(f"level {len(flow_pyrs[row]) - lvl + 1}", fontsize=fig_width * 2)
+                plt.title("level {len(flow_pyrs[row]) - lvl + 1}", fontsize=fig_width * 2)
                 plt.axis('off')
                 plt.imshow(flow_to_img(flow_pyrs[row][lvl], flow_mag_max=flow_mag_max))
                 plot += 1

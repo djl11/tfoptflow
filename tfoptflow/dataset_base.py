@@ -191,17 +191,17 @@ class OpticalFlowDataset(object):
         Called by the base class on init.
         """
         self._tst_dir = self._val_dir = self._trn_dir = self._ds_root
-        self._lbl_dir = f"{self._ds_root}/flow"
-        self._pred_lbl_dir = f"{self._ds_root}/flow_pred"
+        self._lbl_dir = "{self._ds_root}/flow"
+        self._pred_lbl_dir = "{self._ds_root}/flow_pred"
 
     def set_IDs_filenames(self):
         """Set the names of the train/val/test files that will hold the list of sample/label IDs
         Override this for each dataset, if necessary.
         Called by the base class on init.
         """
-        self._trn_IDs_file = f"{self._ds_root}/train_{self.opts['val_split']}split.txt"
-        self._val_IDs_file = f"{self._ds_root}/val_{self.opts['val_split']}split.txt"
-        self._tst_IDs_file = f"{self._ds_root}/test.txt"
+        self._trn_IDs_file = "{self._ds_root}/train_{self.opts['val_split']}split.txt"
+        self._val_IDs_file = "{self._ds_root}/val_{self.opts['val_split']}split.txt"
+        self._tst_IDs_file = "{self._ds_root}/test.txt"
 
     def prepare(self):
         """Do all the preprocessing needed before training/val/test samples can be used.
@@ -243,7 +243,7 @@ class OpticalFlowDataset(object):
         self.min_flow, self.max_flow = np.min(flow_mags), np.max(flow_mags)
         self.avg_flow = np.mean(flow_mags)
         print(
-            f"train flow min={self.min_flow}, avg={self.avg_flow}, max={self.max_flow} ({num_flows} flows)")
+            "train flow min={self.min_flow}, avg={self.avg_flow}, max={self.max_flow} ({num_flows} flows)")
 
     def _create_ID_files(self):
         """Create the ID files for each split of the dataset
@@ -980,14 +980,14 @@ class OpticalFlowDataset(object):
         """Display configuration values."""
         print("\nDataset Configuration:")
         for k, v in self.opts.items():
-            print(f"  {k:20} {v}")
-        print(f"  {'mode':20} {self.mode}")
+            print("  {k:20} {v}")
+        print("  {'mode':20} {self.mode}")
         if self.mode in ['train_noval', 'train_with_val']:
-            print(f"  {'train size':20} {self.trn_size}")
+            print("  {'train size':20} {self.trn_size}")
         if self.mode in ['train_with_val', 'val']:
-            print(f"  {'val size':20} {self.val_size}")
+            print("  {'val size':20} {self.val_size}")
         if self.mode == 'test':
-            print(f"  {'test size':20} {self.tst_size}")
+            print("  {'test size':20} {self.tst_size}")
 
     ###
     # tf.data helpers

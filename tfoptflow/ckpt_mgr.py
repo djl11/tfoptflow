@@ -52,7 +52,7 @@ class BestCheckpointSaver(object):
         self._num_to_keep = num_to_keep
         self._save_dir = save_dir
         self._save_file = save_file
-        self._save_path = os.path.join(save_dir, f'{save_file}.ckpt')
+        self._save_path = os.path.join(save_dir, '{save_file}.ckpt')
         self._maximize = maximize
         self._saver = saver if saver else tf.train.Saver(
             max_to_keep=None,
@@ -72,7 +72,7 @@ class BestCheckpointSaver(object):
             global_step_tensor: A `tf.Tensor` represent the global step
         """
         global_step = sess.run(global_step_tensor)
-        current_ckpt = f'{self._save_file}.ckpt-{global_step}'
+        current_ckpt = '{self._save_file}.ckpt-{global_step}'
         ranking_value = float(ranking_value)
         if not os.path.exists(self.best_checkpoints_file):
             self._save_best_checkpoints_file({current_ckpt: ranking_value})
